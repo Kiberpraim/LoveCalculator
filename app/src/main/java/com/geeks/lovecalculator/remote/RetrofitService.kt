@@ -1,8 +1,7 @@
-package com.geeks.lovecalculator
+package com.geeks.lovecalculator.remote
 
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import retrofit2.create
 
 class RetrofitService {
 

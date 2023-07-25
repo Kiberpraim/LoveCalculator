@@ -1,4 +1,4 @@
-package com.geeks.lovecalculator
+package com.geeks.lovecalculator.ui
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -6,8 +6,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
-import com.geeks.lovecalculator.databinding.FragmentLoveCalculatorBinding
 import com.geeks.lovecalculator.databinding.FragmentResultBinding
+import com.geeks.lovecalculator.remote.LoveModel
 
 class ResultFragment : Fragment() {
 
@@ -33,7 +33,7 @@ class ResultFragment : Fragment() {
     }
 
     private fun initClickers() {
-        with(binding){
+        with(binding) {
             btnTryAgain.setOnClickListener {
                 findNavController().navigateUp()
             }
@@ -41,7 +41,7 @@ class ResultFragment : Fragment() {
     }
 
     private fun initTextView() {
-        with(binding){
+        with(binding) {
             tvFistName.text = loveModel?.firstName.toString()
             tvSecondName.text = loveModel?.secondName.toString()
             tvPercentage.text = loveModel?.percentage.toString() + "%"
