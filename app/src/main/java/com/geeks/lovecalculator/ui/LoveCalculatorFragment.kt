@@ -10,9 +10,16 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.geeks.lovecalculator.LoveViewModel
 import com.geeks.lovecalculator.R
+import com.geeks.lovecalculator.data.Pref
 import com.geeks.lovecalculator.databinding.FragmentLoveCalculatorBinding
+import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
+@AndroidEntryPoint
 class LoveCalculatorFragment : Fragment() {
+
+    @Inject
+    lateinit var pref: Pref
 
     private var _binding: FragmentLoveCalculatorBinding? = null
     private val binding get() = _binding!!
@@ -29,6 +36,8 @@ class LoveCalculatorFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initClickers()
+
+        if(!pref.isUserSeen()){ findNavController().navigate(R.id.navigate_onBoardingFragment)}
     }
 
     private fun initClickers() {

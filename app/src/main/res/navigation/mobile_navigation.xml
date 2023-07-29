@@ -15,5 +15,10 @@
         android:name="com.geeks.lovecalculator.ui.ResultFragment"
         android:label="fragment_result"
         tools:layout="@layout/fragment_result" />
+    <fragment
+        android:id="@+id/navigate_onBoardingFragment"
+        android:name="com.geeks.lovecalculator.ui.OnBoardingFragment"
+        android:label="fragment_on_boarding"
+        tools:layout="@layout/fragment_on_boarding" />
 
 </navigation>
