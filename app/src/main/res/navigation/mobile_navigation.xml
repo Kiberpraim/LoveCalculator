@@ -3,22 +3,32 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/navigate_loveCalculatorFragment">
+    app:startDestination="@id/navigate_mainFragment">
 
     <fragment
-        android:id="@+id/navigate_loveCalculatorFragment"
-        android:name="com.geeks.lovecalculator.ui.LoveCalculatorFragment"
-        android:label="LoveCalculatorFragment"
-        tools:layout="@layout/fragment_love_calculator" />
+        android:id="@+id/navigate_mainFragment"
+        android:name="com.geeks.lovecalculator.ui.main.MainFragment"
+        android:label="MainFragment"
+        tools:layout="@layout/fragment_main" />
     <fragment
         android:id="@+id/navigate_resultFragment"
-        android:name="com.geeks.lovecalculator.ui.ResultFragment"
+        android:name="com.geeks.lovecalculator.ui.result.ResultFragment"
         android:label="fragment_result"
         tools:layout="@layout/fragment_result" />
     <fragment
         android:id="@+id/navigate_onBoardingFragment"
-        android:name="com.geeks.lovecalculator.ui.OnBoardingFragment"
+        android:name="com.geeks.lovecalculator.ui.onboarding.OnBoardingFragment"
         android:label="fragment_on_boarding"
         tools:layout="@layout/fragment_on_boarding" />
+    <fragment
+        android:id="@+id/navigate_historyFragment"
+        android:name="com.geeks.lovecalculator.ui.history.HistoryFragment"
+        android:label="fragment_history"
+        tools:layout="@layout/fragment_history" />
+
+    <activity
+        android:id="@+id/hilt_MainActivity"
+        android:name="com.geeks.lovecalculator.Hilt_MainActivity"
+        android:label="Hilt_MainActivity" />
 
 </navigation>

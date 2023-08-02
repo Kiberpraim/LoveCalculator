@@ -1,4 +1,4 @@
-package com.geeks.lovecalculator.ui.adapter
+package com.geeks.lovecalculator.ui.onboarding
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

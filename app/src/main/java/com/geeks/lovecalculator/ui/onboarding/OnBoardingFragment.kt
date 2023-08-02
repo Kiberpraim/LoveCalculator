@@ -1,20 +1,14 @@
-package com.geeks.lovecalculator.ui
+package com.geeks.lovecalculator.ui.onboarding
 
-import android.content.SharedPreferences
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
-import com.geeks.lovecalculator.MainActivity
 import com.geeks.lovecalculator.R
 import com.geeks.lovecalculator.data.Pref
-import com.geeks.lovecalculator.databinding.FragmentLoveCalculatorBinding
 import com.geeks.lovecalculator.databinding.FragmentOnBoardingBinding
-import com.geeks.lovecalculator.databinding.FragmentResultBinding
-import com.geeks.lovecalculator.ui.adapter.OnBoardingAdapter
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
@@ -26,7 +20,6 @@ class OnBoardingFragment : Fragment() {
 
     @Inject
     lateinit var pref: Pref
-
 
     private val adapter = OnBoardingAdapter(this::onClick)
 
@@ -51,6 +44,6 @@ class OnBoardingFragment : Fragment() {
 
     private fun onClick() {
         pref.saveSeen()
-        findNavController().navigate(R.id.navigate_loveCalculatorFragment)
+        findNavController().navigate(R.id.navigate_mainFragment)
     }
 }

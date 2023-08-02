@@ -1,4 +1,4 @@
-package com.geeks.lovecalculator.ui
+package com.geeks.lovecalculator.ui.result
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -6,8 +6,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
+import com.geeks.lovecalculator.R
 import com.geeks.lovecalculator.databinding.FragmentResultBinding
 import com.geeks.lovecalculator.remote.LoveModel
+import com.geeks.lovecalculator.ui.main.MainFragment
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -28,7 +30,7 @@ class ResultFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        loveModel = arguments?.getSerializable(LoveCalculatorFragment.LOVEMODEL_KEY) as LoveModel
+        loveModel = arguments?.getSerializable(MainFragment.LOVE_MODEL_RESULT_KEY) as LoveModel?
 
         initTextView()
         initClickers()
@@ -37,7 +39,7 @@ class ResultFragment : Fragment() {
     private fun initClickers() {
         with(binding) {
             btnTryAgain.setOnClickListener {
-                findNavController().navigateUp()
+                findNavController().navigate(R.id.navigate_mainFragment)
             }
         }
     }
